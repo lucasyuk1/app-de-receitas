@@ -1,10 +1,22 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import App from '../App';
 
-test('Farewell, front-end', () => {
-  // Este arquivo pode ser modificado ou deletado sem problemas
-  render(<App />);
-  const linkElement = screen.getByText(/TRYBE/i);
-  expect(linkElement).toBeInTheDocument();
+test('testa página de login', () => {
+  render(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>,
+  );
+
+  const emailInput = screen.getByTestId('email-input');
+  const passwordInput = screen.getByTestId('password-input');
+  const submitBtn = screen.getByTestId('login-submit-btn');
+
+  userEvent.type(emailInput, 'teste@teste.com');
+  userEvent.type(passwordInput, '1234567');
+  userEvent.click(submitBtn);
+  expect(window.location.pathname).toBe('/meals');
 });
