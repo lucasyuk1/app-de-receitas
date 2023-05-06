@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { AppContext } from '../context/AppProvider';
 import SearchBar from '../components/SearchBar';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 export default function Drinks() {
   const { recipes } = useContext(AppContext);
@@ -21,6 +22,7 @@ export default function Drinks() {
           </div>
         ))
       }
+      <Footer />
     </div>
   );
 }
