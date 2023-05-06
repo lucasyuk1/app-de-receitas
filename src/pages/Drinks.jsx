@@ -12,10 +12,10 @@ export default function Drinks() {
       {
         recipes.map((recipe, index) => (
           <div key={ index } data-testid={ `${index}-recipe-card` }>
-            <h4 data-testid={ `${index}-card-name` }>{recipe.strMeal}</h4>
+            <h4 data-testid={ `${index}-card-name` }>{recipe.strDrink}</h4>
             <img
-              src={ recipe.strMealThumb }
-              alt={ recipe.strMeal }
+              src={ recipe.strDrinkThumb }
+              alt={ recipe.strDrink }
               data-testid={ `${index}-card-img` }
             />
           </div>
