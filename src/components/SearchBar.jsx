@@ -74,7 +74,18 @@ export default function SearchBar() {
     global.alert('Sorry, we haven\'t found any recipes for these filters.');
   };
 
+  const fetchByFilter = async () => {
+    if (location.pathname === '/meals') {
+      fetchMeals();
+    }
+    if (location.pathname === '/drinks') {
+      fetchDrinks();
+    }
+  };
+
   useEffect(() => {
+    if (recipes === null) return;
+
     if (recipes.length === 1) {
       const { idMeal, idDrink } = recipes[0];
       if (idMeal) {
@@ -84,15 +95,6 @@ export default function SearchBar() {
       }
     }
   }, [recipes, history]);
-
-  const fetchByFilter = async () => {
-    if (location.pathname === '/meals') {
-      fetchMeals();
-    }
-    if (location.pathname === '/drinks') {
-      fetchDrinks();
-    }
-  };
 
   return (
     <div>
