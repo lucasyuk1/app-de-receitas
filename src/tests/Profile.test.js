@@ -63,7 +63,6 @@ test('testa se existem 3 botões na tela', () => {
   expect(buttons).toHaveLength(3);
 });
 
-
 test('local storage é limpo após o click', () => {
   render(
     <AppProvider>
@@ -79,4 +78,3 @@ test('local storage é limpo após o click', () => {
 
   expect(localStorage.getItem('user')).toBeNull();
 });
-
