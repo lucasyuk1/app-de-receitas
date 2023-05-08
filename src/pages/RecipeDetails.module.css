@@ -1,0 +1,15 @@
+.recommendation {
+  display: flex;
+  width: 200px;
+  overflow-x: scroll;
+}
+
+.recommendation img {
+  width: 100px;
+}
+
+.startRecipeBtn {
+  bottom: 0;
+  position: fixed;
+}
+
