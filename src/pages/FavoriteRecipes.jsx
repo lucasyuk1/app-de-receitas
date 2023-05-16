@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import FavoriteCard from '../components/FavoriteCard';
 import bHeartIcon from '../images/blackHeartIcon.svg';
 import Header from '../components/Header';
+import '../styles/Recipes.css';
 
 export default function FavoriteRecipes() {
   const heartIcon = bHeartIcon;
@@ -23,32 +24,35 @@ export default function FavoriteRecipes() {
   };
 
   return (
-    <>
+    <div className="recipes-favorite-container">
       <Header />
-      <div>
+      <div className="filter-btns-container">
         <button
           type="button"
           data-testid="filter-by-all-btn"
+          className="filter-by-all-btn"
           onClick={ () => setFilteredRecipes(storedFavoriteRecipes) }
           name="all"
         >
-          All
+          <img src="https://imgur.com/ljaZ0hF.png" alt="all" />
         </button>
         <button
           type="button"
           data-testid="filter-by-meal-btn"
+          className="filter-by-meal-btn"
           onClick={ filterMeals }
           name="meals"
         >
-          Meals
+          <img src="https://imgur.com/Ew5XjE0.png" alt="all" />
         </button>
         <button
           type="button"
           data-testid="filter-by-drink-btn"
+          className="filter-by-drink-btn"
           onClick={ filterDrinks }
           name="drinks"
         >
-          Drinks
+          <img src="https://imgur.com/dVV6nVo.png" alt="all" />
         </button>
       </div>
       {
@@ -76,6 +80,6 @@ export default function FavoriteRecipes() {
           );
         })
       }
-    </>
+    </div>
   );
 }

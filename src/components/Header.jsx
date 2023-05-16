@@ -3,6 +3,7 @@ import { useLocation, Link } from 'react-router-dom';
 import { AppContext } from '../context/AppProvider';
 import profileIcon from '../images/profileIcon.svg';
 import searchIcon from '../images/searchIcon.svg';
+import '../styles/Header.css';
 
 export default function Header() {
   const { isVisible, setIsVisible } = useContext(AppContext);
@@ -20,22 +21,32 @@ export default function Header() {
     .join(' ');
 
   return (
-    <div>
+    <div className="header-container">
+      <div className="logo-btns">
+        <img src="https://imgur.com/kZF2qlL.png" className="logo-app-minor" alt="logo" />
+        <div className="header-btns-container">
+          <Link to="/profile" className="profile-top-btn">
+            <img
+              src={ profileIcon }
+              alt=""
+              data-testid="profile-top-btn"
+            />
+          </Link>
+          {isMealsOrDrinks && (
+            <button
+              className="search-top-btn"
+              onClick={ () => setIsVisible(!isVisible) }
+            >
+              <img
+                src={ searchIcon }
+                alt=""
+                data-testid="search-top-btn"
+              />
+            </button>
+          )}
+        </div>
+      </div>
       <h1 data-testid="page-title">{formatedTitle}</h1>
-      <Link to="/profile">
-        <img src={ profileIcon } alt="" data-testid="profile-top-btn" />
-      </Link>
-      {isMealsOrDrinks && (
-        <button
-          onClick={ () => setIsVisible(!isVisible) }
-        >
-          <img
-            src={ searchIcon }
-            alt=""
-            data-testid="search-top-btn"
-          />
-        </button>
-      )}
     </div>
   );
 }

@@ -1,6 +1,11 @@
 .recommendation {
+  align-items: center;
   display: flex;
+  justify-content: center;
+  margin: 5px;
   overflow-x: scroll;
+  padding: 10px;
+  text-align: center;
   width: 200px;
 }
 
@@ -9,7 +14,14 @@
 }
 
 .startRecipeBtn {
+  align-items: center;
+  background-color: yellow;
+  border: black solid 2px;
+  border-radius: 10px;
   bottom: 0;
+  display: flex;
+  justify-content: center;
   position: fixed;
+  width: 250px;
 }
 

@@ -1,0 +1,169 @@
+.recipes-container {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.recipes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.recipe-card {
+  align-items: center;
+  background-color: yellow;
+  border: 2px solid #464646;
+  border-radius: 10%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  margin: 15px 5px;
+}
+
+.recipe-card:hover {
+  opacity: 0.5;
+}
+
+.recipe-card img {
+  border-bottom: #464646 solid;
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
+  height: 150px;
+  width: 100%;
+}
+
+.recipe-name {
+  border-radius: 10%;
+  color: #0c056d;
+  font-size: 1.2em;
+  font-weight: 900;
+  margin: 10px 0;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+
+/* Categories */
+.top-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.categories-buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 4px auto;
+}
+
+.all-category-button {
+  background-color: #0c056d;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: small;
+  font-style: italic;
+  margin: 0 3px;
+  padding: 3px;
+  text-shadow: 1px 1px 1px black;
+  width: 65px;
+}
+
+.category-button {
+  align-items: center;
+  background-color: #0c056d;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  flex-wrap: wrap;
+  font-size: small;
+  font-style: italic;
+  justify-content: center;
+  list-style: none;
+  margin: 0 3px;
+  padding: 3px;
+  text-shadow: 1px 1px 1px black;
+  width: 65px;
+}
+
+/* Favorite Recipes */
+.recipes-favorite-container {
+  align-items: center;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.favorite-recipes {
+  border: #0c056d solid 2px;
+  border-radius: 10px;
+  display: flex;
+  margin: 5px auto;
+  width: 318px;
+}
+
+.favorite-recipes-img {
+  border: #0c056d solid 0.5px;
+  width: 308px;
+}
+
+.favorite-recipes-img img {
+  width: 100%;
+}
+
+.favorite-recipes-text {
+  width: 100%;
+}
+
+.favorite-title {
+  color: #0c056d;
+  font-size: 1.5em;
+  font-weight: 900;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  text-shadow: 1px 1px 1px black;
+}
+
+.nat-cat-title {
+  color: #0c056d;
+  font-size: 0.9em;
+  font-style: italic;
+  font-weight: 900;
+  margin: 0;
+  text-align: center;
+}
+
+.share-fav-btns {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px auto;
+  width: 100%;
+}
+
+.favorite-btn, .share-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.filter-by-all-btn, .filter-by-meal-btn, .filter-by-drink-btn {
+  background-color: transparent;
+  border: none;
+}
+
+.filter-btns-container {
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+  width: 100%;
+}

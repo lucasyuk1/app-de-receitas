@@ -1,0 +1,28 @@
+.search-container {
+  align-items: center;
+  background: #fcfcfc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 15px auto;
+  padding: 5px;
+  width: 100%;
+}
+
+.search-input {
+  border: #fcfcfc solid 2px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px black;
+  margin: 3px;
+  padding: 5px;
+  width: 250px;
+}
+
+.search-radio-container {
+  margin: 5px;
+  width: auto;
+}
+
+.opt-search {
+  margin: 5px;
+}

@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
 import { AppContext } from '../context/AppProvider';
+import '../styles/SearchBar.css';
 
 export default function SearchBar() {
   const [filter, setFilter] = useState('');
@@ -97,51 +98,59 @@ export default function SearchBar() {
   }, [recipes, history]);
 
   return (
-    <div>
-      {isVisible
+    <div className="search-container">
+      <div className="search-bar">
+        {isVisible
         && <input
           type="text"
           value={ inputFilter }
           data-testid="search-input"
+          className="search-input"
           onChange={ ({ target }) => setInputFilter(target.value) }
         /> }
-      <label>
-        Ingredient
-        <input
-          type="radio"
-          name="filter"
-          value="ingredient"
-          data-testid="ingredient-search-radio"
-          onChange={ ({ target }) => setFilter(target.value) }
-        />
-      </label>
-      <label>
-        Name
-        <input
-          type="radio"
-          name="filter"
-          value="name"
-          data-testid="name-search-radio"
-          onChange={ ({ target }) => setFilter(target.value) }
-        />
-      </label>
-      <label>
-        First letter
-        <input
-          type="radio"
-          name="filter"
-          value="firstLetter"
-          data-testid="first-letter-search-radio"
-          onChange={ ({ target }) => setFilter(target.value) }
-        />
-      </label>
-      <button
-        data-testid="exec-search-btn"
-        onClick={ fetchByFilter }
-        name="search-btn"
-      >
-        Search
-      </button>
+      </div>
+      <div className="search-radio-container">
+        <label>
+          Ingredient
+          <input
+            type="radio"
+            name="filter"
+            value="ingredient"
+            data-testid="ingredient-search-radio"
+            className="opt-search "
+            onChange={ ({ target }) => setFilter(target.value) }
+          />
+        </label>
+        <label>
+          Name
+          <input
+            type="radio"
+            name="filter"
+            value="name"
+            data-testid="name-search-radio"
+            className="opt-search"
+            onChange={ ({ target }) => setFilter(target.value) }
+          />
+        </label>
+        <label>
+          First letter
+          <input
+            type="radio"
+            name="filter"
+            value="firstLetter"
+            data-testid="first-letter-search-radio"
+            className="opt-search "
+            onChange={ ({ target }) => setFilter(target.value) }
+          />
+        </label>
+        <button
+          data-testid="exec-search-btn"
+          onClick={ fetchByFilter }
+          name="opt-search "
+        >
+          Search
+        </button>
+      </div>
     </div>
   );
 }

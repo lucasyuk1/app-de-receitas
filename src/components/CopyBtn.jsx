@@ -19,6 +19,7 @@ export default function CopyButton({ type, id, dataTest }) {
         src={ shareIcon }
         type="button"
         onClick={ copyURL }
+        className="share-btn"
         disabled={ !type || !id }
         data-testid={ dataTest }
       >

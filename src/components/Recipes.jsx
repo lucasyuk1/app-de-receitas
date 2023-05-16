@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { AppContext } from '../context/AppProvider';
+import '../styles/Recipes.css';
 
 export default function Recipes() {
   const { recipes, setRecipes } = useContext(AppContext);
@@ -106,47 +107,79 @@ export default function Recipes() {
 
   return (
     <div>
-      <button
-        data-testid="All-category-filter"
-        onClick={ () => fetchByFilter() }
-      >
-        All
-      </button>
-      {categories.map((item, index) => (
+      <div className="top-container">
         <button
-          value={ item }
-          onClick={ ({ target }) => fetchByCategory(target.value) }
-          key={ index }
-          data-testid={ `${item}-category-filter` }
+          data-testid="All-category-filter"
+          className="all-category-button"
+          onClick={ () => fetchByFilter() }
         >
-          {item}
+          All
         </button>
-      ))}
-      { location.pathname === '/meals'
-        ? updatedRecipe.map((recipe, index) => (
-          <div key={ index } data-testid={ `${index}-recipe-card` }>
-            <Link to={ `/meals/${recipe.idMeal}` }>
-              <h4 data-testid={ `${index}-card-name` }>{recipe.strMeal}</h4>
-              <img
-                src={ recipe.strMealThumb }
-                alt={ recipe.strMeal }
-                data-testid={ `${index}-card-img` }
-              />
-            </Link>
-          </div>
-        ))
-        : updatedRecipe.map((recipe, index) => (
-          <div key={ index } data-testid={ `${index}-recipe-card` }>
-            <Link to={ `/drinks/${recipe.idDrink}` }>
-              <h4 data-testid={ `${index}-card-name` }>{recipe.strDrink}</h4>
-              <img
-                src={ recipe.strDrinkThumb }
-                alt={ recipe.strDrink }
-                data-testid={ `${index}-card-img` }
-              />
-            </Link>
-          </div>
-        ))}
+        <div className="categories-buttons-container">
+          {categories.map((item, index) => (
+            <button
+              value={ item }
+              onClick={ ({ target }) => fetchByCategory(target.value) }
+              key={ index }
+              className="category-button"
+              data-testid={ `${item}-category-filter` }
+            >
+              {item}
+            </button>
+          ))}
+        </div>
+      </div>
+      <div className="recipes-container">
+        <div className="recipes">
+          { location.pathname === '/meals'
+            ? updatedRecipe.map((recipe, index) => (
+              <div
+                key={ index }
+                data-testid={ `${index}-recipe-card` }
+                className="recipe-card"
+              >
+                <Link to={ `/meals/${recipe.idMeal}` }>
+                  <img
+                    src={ recipe.strMealThumb }
+                    alt={ recipe.strMeal }
+                    data-testid={ `${index}-card-img` }
+                    className="recipe-image"
+                  />
+                  <h4
+                    data-testid={ `${index}-card-name` }
+                    className="recipe-name"
+                  >
+                    {recipe.strMeal}
+
+                  </h4>
+                </Link>
+              </div>
+            ))
+            : updatedRecipe.map((recipe, index) => (
+              <div
+                key={ index }
+                data-testid={ `${index}-recipe-card` }
+                className="recipe-card"
+              >
+                <Link to={ `/drinks/${recipe.idDrink}` }>
+                  <img
+                    src={ recipe.strDrinkThumb }
+                    alt={ recipe.strDrink }
+                    data-testid={ `${index}-card-img` }
+                    className="recipe-image"
+                  />
+                  <h4
+                    data-testid={ `${index}-card-name` }
+                    className="recipe-name"
+                  >
+                    {recipe.strDrink}
+
+                  </h4>
+                </Link>
+              </div>
+            ))}
+        </div>
+      </div>
     </div>
   );
 }

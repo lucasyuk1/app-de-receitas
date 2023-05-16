@@ -1,0 +1,39 @@
+body {
+  background: yellow;
+  margin: 0;
+  padding: 0;
+}
+
+.login-container {
+  align-items: center;
+  background: yellow;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+}
+
+.logo-app {
+  border-radius: 25px;
+  width: 311px;
+}
+
+.input-email, .input-password {
+  border: #fcfcfc solid 2px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px black;
+  display: flex;
+  margin: 6px;
+}
+
+.enter-button {
+  background-color: white;
+  border: #fcfcfc solid 2px;
+  box-shadow: 0 0 10px black;
+  cursor: pointer;
+  font-weight: 900;
+  margin: 6px;
+  width: 212px;
+}
