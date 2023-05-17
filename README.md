@@ -20,8 +20,8 @@ E outros...
 1. Clone o projeto para o seu computador:
 
 ```bash
-  git clone https://github.com/machadofguilherme/trybe-app-de-receitas.git
-  cd trybe-app-de-receitas
+  git clone https://github.com/lucasyuk1/app-de-receitas.git
+  cd app-de-receitas
 ```
 2. Instale as dependências:
 
